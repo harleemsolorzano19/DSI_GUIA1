@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { createObserveModule } from '@nestjs/observe';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { PrismaModule } from './prisma/prisma.module';
+import { UsersModule } from './users/users.module';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -14,6 +16,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       appSecret: 'YOUR_APP_SECRET',
       serviceId: 'my_first_proyect_hpsp',
     }),
+    PrismaModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
